@@ -2,16 +2,18 @@
 // Routes
 
 $app->get('/techniciens', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
+    $firebase = Firebase::fromServiceAccount(__DIR__.'/Firebase/ppe4-db-firebase-adminsdk-094r8-34a6a11e6d.json');
+    $database = $firebase->getDatabase();
+    $reference = $database->getReference('Techniciens/0');
+    $snapshot = $reference->getSnapshot();
+    var_dump($snapshot);die;
     $uri = $request->getUri();
-    $results = $this->db->query("SELECT loginT, prenom
-            from technicien");
-    $this->logger->info($results);
     $data = [
         'status' => 200,
         'request' => $uri->getPath(),
         'techniciens' => [
             '0' => [
-                'name' => 'jean',
+                'name' => 'Josh',
                 'location' => [
                     'x' => 12,
                     'y' => 24
