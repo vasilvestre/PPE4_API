@@ -7,7 +7,7 @@
 
 $app->get('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
     $this->db;
-    $positions = R::findAll('position');
+    $positions = R::findAll('position', 'WHERE counter <> 0');
     foreach ($positions as &$position){
         $position->counter -= 1;
     }
@@ -16,7 +16,7 @@ $app->get('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response 
     return $newResponse->withJson($positions);
 });
 
-$app->post('/latlong',function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+$app->put('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
     $this->db;
     $params = $request->getHeaders();
     if ($params['HTTP_IMEI'] == null or $params['HTTP_X'] == null or $params['HTTP_Y'] == null){
@@ -24,15 +24,7 @@ $app->post('/latlong',function(\Slim\Http\Request $request, \Slim\Http\Response 
     }
     $presence = R::findOne('position', 'imei = ?', [$params['HTTP_IMEI'][0]]);
     if ($presence == null) {
-        $position = R::dispense('position');
-        $position->imei = $params['HTTP_IMEI'][0];
-        $position->x = $params['HTTP_X'][0];
-        $position->y = $params['HTTP_Y'][0];
-        $position->updated_at = time();
-        $position->created_at = time();
-        $position->counter = 10;
-        R::store($position);
-        $message = 'Technicien crée avec succes';
+        $message = 'Vous ne pouvez créer une nouvelle entrée.';
     }else{
         $presence->x = $params['HTTP_X'][0];
         $presence->y = $params['HTTP_Y'][0];
@@ -40,5 +32,23 @@ $app->post('/latlong',function(\Slim\Http\Request $request, \Slim\Http\Response 
         R::store($presence);
         $message = 'Technicien mit à jour !';
     }
+    return $response->write($message);
+});
+
+$app->delete('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $this->db;
+    $params = $request->getHeaders();
+    if ($params['HTTP_IMEI'] == null){
+        return $response->write('Veuillez spécifier votre IMEI et vos positions');
+    }
+    $position = R::findOne('position', 'imei = ?', [$params['HTTP_IMEI'][0]]);
+    $position == null ?:R::trash($position);
+    if ($position == null){
+        $message = 'Aucun IMEI est correspondant.';
+    }else{
+        R::trash($position);
+        $message = 'IMEI supprimé de la base.';
+    }
+
     return $response->write($message);
 });
