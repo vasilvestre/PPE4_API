@@ -20,15 +20,5 @@ $container['logger'] = function ($c) {
 
 //database
 $container['db'] = function ($c) {
-    $db = $c->get('settings')['db'];
-    try{
-        $db = new PDO("sqlsrv:Server=" . $db['host'] . ";Database=" . $db['dbname'],
-            $db['user'], $db['pass']);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    }catch (mysqli_sql_exception $e){
-        print_r($e);
-    }
-
-    return $db;
+    return R::setup('sqlite:Sqlite/PPE4LATLONG.s3db');
 };
