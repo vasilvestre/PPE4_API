@@ -20,5 +20,6 @@ $container['logger'] = function ($c) {
 
 //database
 $container['db'] = function ($c) {
+    var_dump(RedBeanPHP\);die;
     return R::setup('sqlite:Sqlite/PPE4LATLONG.s3db');
 };

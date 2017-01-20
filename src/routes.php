@@ -1,15 +1,20 @@
 <?php
 // Routes
 
-$app->get('/techniciens', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
+$app->post('/techniciens', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
 //    $firebase = Firebase::fromServiceAccount(__DIR__.'/Firebase/ppe4-db-firebase-adminsdk-094r8-34a6a11e6d.json');
 //    $database = $firebase->getDatabase();
 //    $reference = $database->getReference('Techniciens/0');
 //    $snapshot = $reference->getSnapshot();
+    $input = json_decode($request->getBody());
     $position = R::dispense('position');
-    $position->imei
 
     return $newResponse;
+});
+
+$app->get('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $positions = R::dispenseAll('latlong');
+    var_dump($positions);die;
 });
 
 $app->get('/[{name}]', function ($request, \Slim\Http\Response $response, $args) {
