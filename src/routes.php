@@ -14,9 +14,20 @@ $app->post('/techniciens', function (\Slim\Http\Request $request, \Slim\Http\Res
 
 $app->get('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
     $this->db;
-    $positions = R::dispenseAll('latlong');
-    var_dump($positions);die;
+    $positions = R::getAll('SELECT * FROM position');
+    foreach ($positions as &$position){
+        $counter = R::findOne('position',
+            'IMEI = ?',[$position['IMEI']]
+        );
+        $counter->counter -= 1;
+    }
+    R::storeAll($positions);
+    $positions = R::inspect('position');
+    $newResponse = $response->withHeader('Content-type', 'application/json');
+    return $newResponse->withJson($positions);
 });
+
+
 
 $app->get('/[{name}]', function ($request, \Slim\Http\Response $response, $args) {
     // Sample log message

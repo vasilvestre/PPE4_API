@@ -20,5 +20,7 @@ $container['logger'] = function ($c) {
 
 //database
 $container['db'] = function ($c) {
-    return R::setup('sqlite:Sqlite/PPE4LATLONG.s3db');
+    $db = $c->get('settings')['db'];
+    return R::setup( 'mysql:host=localhost;dbname=PPE4_API',
+        'root', 'root' );
 };
