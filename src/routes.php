@@ -13,6 +13,7 @@ $app->post('/techniciens', function (\Slim\Http\Request $request, \Slim\Http\Res
 });
 
 $app->get('/latlong', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $this->db;
     $positions = R::dispenseAll('latlong');
     var_dump($positions);die;
 });
