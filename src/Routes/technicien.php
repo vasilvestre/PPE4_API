@@ -25,7 +25,7 @@ $app->post('/techniciens', function(\Slim\Http\Request $request, \Slim\Http\Resp
     $params = $request->getHeaders();
     $result = R::dispense('technicien');
     $result->id_technicien = $params['HTTP_ID'][0];
-    $result->login = $params['HTTP_LOGIN'][0];
+    $result->username = $params['HTTP_USERNAME'][0];
     $result->password = $params['HTTP_PASSWORD'][0];
     R::store($result);
     return $response->withStatus(200);

@@ -7,8 +7,8 @@ $app->get('/', function (\Slim\Http\Request $request, \Slim\Http\Response $respo
 $app->post('/login_check', function (\Slim\Http\Request $request, \Slim\Http\Response $response, $args) {
     $this->db;
     $params = $request->getHeaders();
-    $result = R::findOne('technicien', 'login = :login and password = :password', [
-        ':login' => $params['HTTP_LOGIN'][0],
+    $result = R::findOne('technicien', 'username = :username and password = :password', [
+        ':username' => $params['HTTP_USERNAME'][0],
         ':password' => $params['HTTP_PASSWORD'][0]
     ]);
     return $result == null ? 'nop' : 'true';
