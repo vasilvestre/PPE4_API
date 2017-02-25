@@ -28,8 +28,8 @@
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
         "kreait/firebase-php": "^2.0",
-        "symfony/var-dumper": "^3.2",
-        "redbeanphp": "master@dev"
+        "redbeanphp": "master@dev",
+        "twbs/bootstrap": "4.0.0-alpha.6"
     },
     "config": {
         "secure-http": false
