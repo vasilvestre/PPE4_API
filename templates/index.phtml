@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Slim 3</title>
+        <title>Travaux Efficom</title>
         <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <style>
             body {
                 margin: 50px 0 0 0;
@@ -26,13 +27,132 @@
         </style>
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+        <h1>Valentin Silvestre</h1>
+        <div>Présentation des projets</div>
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a>
-        <?php endif; ?>
+        <hr>
+
+        <div class="container">
+            <h3><u>Url de base :</u> http://api.vsilvestre.fr/</h3>
+            <hr>
+            <h3>GET</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Objectif</th>
+                        <th>URL</th>
+                        <th>Arguments</th>
+                    </tr>
+                    <tr>
+                        <th>Toutes les interventions</th>
+                        <td>interventions/</td>
+                        <td><i>null</i></td>
+                    </tr>
+                    <tr>
+                        <th>Toutes les positions</th>
+                        <td>positions/</td>
+                        <td><i>null</i></td>
+                    </tr>
+                    <tr>
+                        <th>Tout les techniciens</th>
+                        <td>techniciens/</td>
+                        <td><i>null</i></td>
+                    </tr>
+                    <tr>
+                        <th>Une intervention</th>
+                        <td>interventions/{id}</td>
+                        <td><i>Id de l'intervention</i></td>
+                    </tr>
+                    <tr>
+                        <th>Une position d'un matériel</th>
+                        <td>positions/{imei}</td>
+                        <td><i>IMEI</i></td>
+                    </tr>
+                    <tr>
+                        <th>Un technicien</th>
+                        <td>techniciens/{id}</td>
+                        <td><i>Id du technicien</i></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <h3>POST</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Objectif</th>
+                        <th>URL</th>
+                        <th>Arguments</th>
+                    </tr>
+                    <tr>
+                        <th>Une intervention</th>
+                        <td>interventions/{id}</td>
+                        <td><i>Id de l'intervention</i></td>
+                    </tr>
+                    <tr>
+                        <th>Une position d'un matériel</th>
+                        <td>positions/{imei}</td>
+                        <td><i>IMEI</i></td>
+                    </tr>
+                    <tr>
+                        <th>Un technicien</th>
+                        <td>techniciens/{id}</td>
+                        <td><i>Id du technicien</i></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <h3>PUT</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Objectif</th>
+                        <th>URL</th>
+                        <th>Arguments</th>
+                    </tr>
+                    <tr>
+                        <th>Une intervention</th>
+                        <td>interventions/{id}</td>
+                        <td><i>Id de l'intervention</i></td>
+                    </tr>
+                    <tr>
+                        <th>Une position d'un matériel</th>
+                        <td>positions/{imei}</td>
+                        <td><i>IMEI</i></td>
+                    </tr>
+                    <tr>
+                        <th>Un technicien</th>
+                        <td>techniciens/{id}</td>
+                        <td><i>Id du technicien</i></td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <h3>DELETE</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <th>Objectif</th>
+                        <th>URL</th>
+                        <th>Arguments</th>
+                    </tr>
+                    <tr>
+                        <th>Une intervention</th>
+                        <td>interventions/{id}</td>
+                        <td><i>Id de l'intervention</i></td>
+                    </tr>
+                    <tr>
+                        <th>Une position d'un matériel</th>
+                        <td>positions/{imei}</td>
+                        <td><i>IMEI</i></td>
+                    </tr>
+                    <tr>
+                        <th>Un technicien</th>
+                        <td>techniciens/{id}</td>
+                        <td><i>Id du technicien</i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </body>
 </html>

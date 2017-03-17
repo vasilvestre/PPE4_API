@@ -11,5 +11,7 @@ $app->post('/login_check', function (\Slim\Http\Request $request, \Slim\Http\Res
         ':username' => $params['HTTP_USERNAME'][0],
         ':password' => $params['HTTP_PASSWORD'][0]
     ]);
-    return $result == null ? 'nop' : 'true';
+    $json['success'] = $result == null ? 'error' : 'success';
+    $newResponse = $response->withHeader('Content-type', 'application/json');
+    return $newResponse->withJson($json);
 });

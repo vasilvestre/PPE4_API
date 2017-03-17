@@ -8,8 +8,11 @@
 $app->get('/interventions', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
     $this->db;
     $results = R::findAll('intervention');
+    $json = [
+        'interventions' => array_values($results)
+    ];
     $newResponse = $response->withHeader('Content-type', 'application/json');
-    return $newResponse->withJson($results);
+    return $newResponse->withJson($json);
 });
 
 $app->get('/interventions/{id}', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
@@ -49,7 +52,7 @@ $app->put('/interventions/{id}', function(\Slim\Http\Request $request, \Slim\Htt
     $params = $request->getHeaders();
     $id = $request->getAttribute('id');
     $result = R::findOne('intervention','id = ?', [$id]);
-    //TODO: Qu'est ce qui peut être mit à jour ?
+    $result->state = $params['HTTP_STATE'][0];
     $result->updated_at = time();
     R::store($result);
 });
