@@ -22,5 +22,5 @@ $container['logger'] = function ($c) {
 $container['db'] = function ($c) {
     $db = $c->get('settings')['db'];
     return R::setup( 'mysql:host=localhost;dbname=PPE4_API',
-        'root', 'root' );
+        $db['username'], $db['password'] );
 };

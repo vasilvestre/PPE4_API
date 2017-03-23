@@ -18,10 +18,8 @@ return [
 
         // Database settings
         'db' => [
-            'host' => '172.16.17.128',
-            'user' => 'sa',
-            'pass' => 'root',
-            'dbname' => 'domy59',
+            'username' => 'root',
+            'password' => 'root',
         ]
     ],
 ];
