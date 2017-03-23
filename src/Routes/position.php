@@ -1,9 +1,4 @@
 <?php
-// Routes
-//    $firebase = Firebase::fromServiceAccount(__DIR__.'/Firebase/ppe4-db-firebase-adminsdk-094r8-34a6a11e6d.json');
-//    $database = $firebase->getDatabase();
-//    $reference = $database->getReference('Techniciens/0');
-//    $snapshot = $reference->getSnapshot();
 /**
  * Created by PhpStorm.
  * User: vsilvestre
