@@ -1,0 +1,117 @@
+Dictionnaire de données 
+
+Nom : id
+Type : Int
+Taille : 10,0
+Commentaire : 
+
+Nom : id_intervention
+Type : Int
+Taille : 10,0
+Commentaire : 
+
+Nom : entreprise
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : address
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : address_comp
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : zipcode
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : city
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : contact_lastname
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : contact_firstname
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : contact_phone_number
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : intervention_start
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : intervention_duration
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : intervention_description
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : picture
+Type : Blob
+Taille : 65535,0
+Commentaire : 
+
+Nom : updated_at
+Type : Int
+Taille : 10,0
+Commentaire : 
+
+Nom : state
+Type : Varchar
+Taille : 20,0
+Commentaire : 
+
+Nom : imei
+Type : Varchar
+Taille : 17,0
+Commentaire : 
+
+Nom : latitude
+Type : Double
+Taille : 22,0
+Commentaire : 
+
+Nom : longitude
+Type : Double
+Taille : 22,0
+Commentaire : 
+
+Nom : created_at
+Type : Int
+Taille : 10,0
+Commentaire : 
+
+Nom : id_technicien
+Type : Int
+Taille : 10,0
+Commentaire : 
+
+Nom : username
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
+Nom : password
+Type : Varchar
+Taille : 255,0
+Commentaire : 
+
