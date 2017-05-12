@@ -21,6 +21,5 @@ $container['logger'] = function ($c) {
 //database
 $container['db'] = function ($c) {
     $db = $c->get('settings')['db'];
-    return R::setup( 'mysql:host=localhost;dbname=PPE4_API',
-        $db['username'], $db['password'] );
+    return R::setup('sqlite:'.__DIR__ . '/Database/bdd.sqlite');
 };
