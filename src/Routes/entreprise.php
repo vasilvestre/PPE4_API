@@ -13,6 +13,14 @@ $app->get('/entreprises', function(\Slim\Http\Request $request, \Slim\Http\Respo
     return $newResponse->withJson($results);
 });
 
+$app->get('/entreprises/{id}/interventions', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
+    $this->db;
+    $id = $request->getAttribute('id');
+    $result = R::find('intervention','id_entreprise = ?', [$id]);
+    $newResponse = $response->withHeader('Content-type', 'application/json');
+    return $newResponse->withJson($result);
+});
+
 $app->post('/entreprises', function(\Slim\Http\Request $request, \Slim\Http\Response $response, $args){
     $this->db;
     $params = $request->getHeaders();

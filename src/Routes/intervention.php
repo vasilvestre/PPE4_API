@@ -28,7 +28,7 @@ $app->post('/interventions', function(\Slim\Http\Request $request, \Slim\Http\Re
     $params = $request->getHeaders();
     $result = R::dispense('intervention');
     $result->id_intervention = $params['HTTP_ID'][0];
-    $result->entreprise = $params['HTTP_ENTREPRISE'][0];
+    $result->id_entreprise = $params['HTTP_ID_ENTREPRISE'][0];
     $result->address = $params['HTTP_ADDRESS'][0];
     $result->address_comp = $params['HTTP_ADDRESS_COMP'][0];
     $result->zipcode = $params['HTTP_ZIPCODE'][0];
