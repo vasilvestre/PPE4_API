@@ -29,5 +29,7 @@ require __DIR__ . '/../src/Routes/position.php';
 require __DIR__ . '/../src/Routes/intervention.php';
 require __DIR__ . '/../src/Routes/technicien.php';
 
+require __DIR__ . '/../src/Routes/script.php';
+
 // Run app
 $app->run();
