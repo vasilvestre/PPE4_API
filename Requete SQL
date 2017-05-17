@@ -1,0 +1,10 @@
+CREATE TABLE `entreprise` ( `id` INTEGER PRIMARY KEY AUTOINCREMENT, `nom` TEXT NOT NULL, `address` TEXT )
+
+ALTER TABLE PPE4_API.intervention ADD id_entreprise INT NULL;
+ALTER TABLE PPE4_API.intervention
+ADD CONSTRAINT intervention_entreprise_id_fk
+FOREIGN KEY (id_entreprise) REFERENCES entreprise (id);
+
+// EXECUTION DU SCRIPT
+
+ALTER TABLE PPE4_API.intervention DROP entreprise;

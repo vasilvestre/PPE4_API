@@ -10,7 +10,7 @@ $app->post('/boucle_intervention', function(\Slim\Http\Request $request, \Slim\H
         R::store($entreprise);
         $intervention->id_entreprise = $entreprise->id;
     }
-    $interventions = R::findAll('entreprise');
+    $entreprises = R::findAll('entreprise');
     $newResponse = $response->withHeader('Content-type', 'application/json');
-    return $newResponse->withJson($interventions);
+    return $newResponse->withJson($entreprises);
 });
