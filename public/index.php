@@ -28,6 +28,7 @@ require __DIR__ . '/../src/Routes/index.php';
 require __DIR__ . '/../src/Routes/position.php';
 require __DIR__ . '/../src/Routes/intervention.php';
 require __DIR__ . '/../src/Routes/technicien.php';
+require __DIR__ . '/../src/Routes/entreprise.php';
 
 require __DIR__ . '/../src/Routes/script.php';
 
