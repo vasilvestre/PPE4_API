@@ -27,7 +27,7 @@
         "slim/slim": "^3.1",
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
-        "kreait/firebase-php": "^2.0",
+        "kreait/firebase-php": "^4.41",
         "redbeanphp": "master@dev",
         "twbs/bootstrap": "4.0.0-alpha.6"
     },
